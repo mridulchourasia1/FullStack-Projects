@@ -1,0 +1,21 @@
+<% layout("/layout/boilerplate") %>
+
+<h1>Edit Listing</h1>
+<form action="/listings/editListing/<%= listing._id %>" method="POST" enctype="multipart/form-data" class="create-listing-form">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value="<%= listing.title %>" required />
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" rows="4" required><%= listing.description %></textarea>
+
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" value="<%= listing.price %>" required />
+
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" value="<%= listing.location %>" required />
+
+  <label for="images">Upload Images:</label>
+  <input type="file" id="images" name="images" multiple accept="image/*" class="form-control" />
+
+  <button type="submit" class="submit-button">Update Listing</button>
+</form>

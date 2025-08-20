@@ -1,0 +1,104 @@
+<% layout("/layout/boilerplate") %>
+
+<h1>Create a New Listing</h1>
+<form action="/listings/createListing" method="POST" class="create-listing-form needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="title" class="form-label">Title:</label>
+    <input type="text" id="title" name="title" class="form-control" required />
+    <div class="invalid-feedback">
+      Please provide a title.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" name="description" rows="4" class="form-control" required></textarea>
+    <div class="invalid-feedback">
+      Please provide a description.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" class="form-control" required min="0" />
+    <div class="invalid-feedback" id="price-feedback">
+      Price must be a non-negative number.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="location" class="form-label">Location:</label>
+    <input type="text" id="location" name="location" class="form-control" required />
+    <div class="invalid-feedback">
+      Please provide a location.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="images" class="form-label">Paste Image URLs (comma separated):</label>
+    <textarea id="images" name="images" rows="3" class="form-control" placeholder="Paste image URLs separated by commas"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary submit-button">Create Listing</button>
+</form>
+
+<script>
+  (function () {
+    'use strict'
+
+    var form = document.querySelector('.create-listing-form');
+    var priceInput = document.getElementById('price');
+    var titleInput = document.getElementById('title');
+    var descriptionInput = document.getElementById('description');
+    var locationInput = document.getElementById('location');
+
+    form.addEventListener('submit', function (event) {
+      priceInput.setCustomValidity('');
+
+      if (priceInput.value < 0) {
+        priceInput.setCustomValidity('Price cannot be negative');
+      }
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add('was-validated');
+    }, false);
+
+    priceInput.addEventListener('input', function () {
+      if (priceInput.value < 0) {
+        priceInput.setCustomValidity('Price cannot be negative');
+        priceInput.nextElementSibling.textContent = 'Price must be a non-negative number.';
+      } else if (priceInput.value > 0) {
+        priceInput.setCustomValidity('');
+        priceInput.nextElementSibling.textContent = 'Price looks good!';
+      } else {
+        priceInput.setCustomValidity('');
+        priceInput.nextElementSibling.textContent = 'Price must be a non-negative number.';
+      }
+      form.classList.remove('was-validated');
+    });
+
+    // Add blur event listeners for title, description, and location to show pop-up message if empty
+    function validateFieldOnBlur(input) {
+      input.addEventListener('blur', function () {
+        if (!input.value.trim()) {
+          input.setCustomValidity('Please fill this');
+          input.classList.add('is-invalid');
+          input.nextElementSibling.textContent = 'Please fill this';
+        } else {
+          input.setCustomValidity('');
+          input.classList.remove('is-invalid');
+          input.nextElementSibling.textContent = '';
+        }
+      });
+    }
+
+    validateFieldOnBlur(titleInput);
+    validateFieldOnBlur(descriptionInput);
+    validateFieldOnBlur(locationInput);
+
+  })();
+</script>

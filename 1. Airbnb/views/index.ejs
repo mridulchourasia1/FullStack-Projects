@@ -1,0 +1,63 @@
+<% layout("/layout/boilerplate")%>
+  <link rel="stylesheet" href="/style/index.css">
+
+<body>
+  <%- include('includes/flash') %>
+  <h1>Listings</h1>
+  <% if (user) { %>
+    <a href="/listings/createListing" class="create-button">Create New Listing</a>
+  <% } else { %>
+    <a href="#" class="create-button disabled" title="Login required to create listing" onclick="return false;">Create New Listing</a>
+  <% } %>
+
+  <div id="map" style="width: 100%; height: 400px; margin-bottom: 20px;"></div>
+
+  <% if (allListings.length === 0) { %>
+    <p>No listings available.</p>
+  <% } else { %>
+    <div class="listings-grid">
+      <% allListings.forEach(function(listing) { %>
+        <div class="listing-card">
+          <% if (listing.images && listing.images.length > 0) { %>
+            <div class="badge">Guest favourite</div>
+            <img src="<%= listing.images[0] %>" alt="Listing Image" class="listing-image" />
+          <% } else { %>
+            <div class="listing-image placeholder"></div>
+          <% } %>
+          <div class="owner-name">
+            <small>Owner: <%= listing.owner ? listing.owner.username : 'Unknown' %></small>
+          </div>
+          <div id="map-<%= listing._id %>" class="listing-map" style="width: 100%; height: 200px; margin-bottom: 10px;"></div>
+          <div class="listing-info">
+            <h2>
+              <a href="/listings/listing/<%= listing._id %>" class="title-link"><%= listing.title %></a>
+            </h2>
+            <p class="price">₹<%= listing.price %> for 2 nights</p>
+            <p class="rating">★ <%= listing.rating ? listing.rating.toFixed(2) : 'N/A' %></p>
+            <div class="listing-actions">
+              <% if (user) { %>
+                <a href="/listings/editListing/<%= listing._id %>" class="edit-button">Edit</a>
+                <form action="/listings/deleteListing/<%= listing._id %>" method="POST" class="delete-form">
+                  <button type="submit" class="delete-button">Delete</button>
+                </form>
+              <% } else { %>
+                <a href="#" class="edit-button disabled" title="Login required to edit listing" onclick="return false;">Edit</a>
+                <form class="delete-form">
+                  <button type="submit" class="delete-button" disabled title="Login required to delete listing">Delete</button>
+                </form>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfFgzMHCCGvrDxx48P_inRDk-Z3oM2RDg"></script>
+  <script>
+    // Pass listings data to the map script
+    const listingsData = <%= JSON.stringify(allListings) %>;
+  </script>
+  <script src="/scripts/map.js"></script>
+</body>
+</create_file>
