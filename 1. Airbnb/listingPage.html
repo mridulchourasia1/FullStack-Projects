@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listings</title>
+</head>
+<body>
+  <h1>Listings</h1>
+  <ul id="listingList"></ul>
+
+  <script>
+    async function fetchListings() {
+      try {
+        const response = await fetch('/listings');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const listings = await response.json();
+        const listElement = document.getElementById('listingList');
+        listElement.innerHTML = '';
+        listings.forEach(listing => {
+          const li = document.createElement('li');
+          li.textContent = `${listing.title} - ${listing.description} - $${listing.price}`;
+          listElement.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Failed to fetch listings:', error);
+        document.body.innerHTML += '<p>Failed to load listings.</p>';
+      }
+    }
+
+    fetchListings();
+  </script>
+</body>
+</html>
