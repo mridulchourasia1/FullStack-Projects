@@ -1,0 +1,19 @@
+<nav class="navbar fixed-top bg-white shadow-sm">
+<div class="navbar-left">
+    <a href="/" class="navbar-logo">Airbnb</a>
+    <form action="/listings" method="GET" style="display:inline;">
+      <input type="text" name="search" class="nav-search" placeholder="Search...">
+    </form>
+    <a href="/listings" class="nav-link">Explore</a>
+  </div>
+  <div class="navbar-right">
+    <a href="/listings/createListing" class="nav-link">Create Listing</a>
+    <% if (!user) { %>
+      <a href="/signup" class="nav-link">Signup</a>
+      <a href="/login" class="nav-link">Login</a>
+    <% } else { %>
+      <span class="welcome-message">Welcome, <%= user.username %></span>
+      <a href="/logout" class="nav-link">Logout</a>
+    <% } %>
+  </div>
+</nav>
