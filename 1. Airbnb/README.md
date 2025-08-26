@@ -141,9 +141,10 @@ Thanks to all open-source libraries and tutorials that helped make this project 
 
 **Mridul Chourasia**  
 Email: gitmridul18@gmail.com  
-GitHub: [mridulchourasia1](https://github.com/mridulchourasia1
+GitHub: [mridulchourasia1](https://github.com/mridulchourasia1)
 
 ---
 
 *Enjoy exploring and customizing your own Airbnb clone! 🚀🏡*
+
 
