@@ -9,7 +9,7 @@ Welcome to my **Airbnb Clone** — a full-stack web application that mimics the 
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage Screenshot](images/homepage.png)
+![Homepage Screenshot](homepage.png)
 
 
 ---
@@ -146,3 +146,4 @@ GitHub: [mridulchourasia1](https://github.com/mridulchourasia1
 ---
 
 *Enjoy exploring and customizing your own Airbnb clone! 🚀🏡*
+
