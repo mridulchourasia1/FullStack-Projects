@@ -1,0 +1,70 @@
+{
+  "chatHistory": {
+    "1": [
+      {
+        "room": "1",
+        "author": "rohan",
+        "message": "hy",
+        "time": "10:59 AM"
+      },
+      {
+        "room": "1",
+        "author": "mohan",
+        "message": "🙂",
+        "time": "11:02 AM"
+      },
+      {
+        "room": "1",
+        "author": "rohan",
+        "message": "code",
+        "time": "12:49 PM"
+      }
+    ],
+    "121": [
+      {
+        "room": "121",
+        "author": "rohan",
+        "message": "hy",
+        "time": "11:51 AM"
+      },
+      {
+        "room": "121",
+        "author": "mohan",
+        "message": "mast",
+        "time": "11:51 AM"
+      }
+    ],
+    "123": [],
+    "131": [
+      {
+        "room": "131",
+        "author": "Mohan",
+        "message": "what's up 😊",
+        "time": "10:08 PM"
+      },
+      {
+        "room": "131",
+        "author": "Rohan",
+        "message": "nice😁",
+        "time": "10:12 PM"
+      }
+    ]
+  },
+  "users": {
+    "NCfWQpDo2sCLcE_CAAAF": {
+      "id": "NCfWQpDo2sCLcE_CAAAF",
+      "username": "rohan",
+      "room": "1"
+    },
+    "H6mijpHEiANs_VChAAAB": {
+      "id": "H6mijpHEiANs_VChAAAB",
+      "username": "mohan",
+      "room": "1"
+    },
+    "0_CHZdOTSaHGwWFdAAAD": {
+      "id": "0_CHZdOTSaHGwWFdAAAD",
+      "username": "rohan",
+      "room": "1"
+    }
+  }
+}
