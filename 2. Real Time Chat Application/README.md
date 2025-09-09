@@ -74,7 +74,6 @@ Visit `http://localhost:3000` in your browser to see the app in action! 🎉
 
 ## 📸 Screenshots
 
-*(Upload your screenshots to an `images/` folder in your repo and update the paths below accordingly)*
 
 ![Chat Application](screenshot2.png)  
 ![Server](screenshot1.png)
