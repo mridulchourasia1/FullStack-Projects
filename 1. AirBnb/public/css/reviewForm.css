@@ -1,0 +1,96 @@
+/* Airbnb-inspired review form styles */
+
+.review-form-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: 'Arial', sans-serif;
+}
+
+.review-form-container h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #222222;
+}
+
+.review-form-container label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #484848;
+}
+
+.review-form-container input[type="radio"] + label {
+  cursor: pointer;
+  font-weight: 400;
+  color: #484848;
+}
+
+.review-form-container input[type="radio"]:checked + label {
+  color: #ff385c; /* Airbnb pink */
+  font-weight: 600;
+}
+
+.review-form-container .starability-slot > label {
+  margin-right: 0.25rem;
+}
+
+.review-form-container select,
+.review-form-container textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #484848;
+  transition: border-color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.review-form-container select:focus,
+.review-form-container textarea:focus {
+  outline: none;
+  border-color: #ff385c;
+  box-shadow: 0 0 5px rgba(255, 56, 92, 0.5);
+}
+
+.review-form-container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.review-form-container button[type="button"] {
+  background-color: #ff385c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.review-form-container button[type="button"]:hover {
+  background-color: #e03150;
+}
+
+.review-form-container .invalid-feedback {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .review-form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}

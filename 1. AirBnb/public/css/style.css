@@ -1,0 +1,119 @@
+/* Styling for review cards */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Styling for delete button */
+.delete-review-btn {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease;
+}
+
+.delete-review-btn:hover {
+  background-color: #c82333;
+}
+
+/* Sticky footer styles */
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 1030;
+}
+
+.sticky-footer .footer-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.sticky-footer .instagram-icon svg {
+  fill: #fff;
+  width: 16px;
+  height: 16px;
+}
+
+/* Sticky navbar styles */
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;  /* Changed width to 100% */
+  height: 50px;  /* Reduced height */
+  z-index: 1040;
+  background-color: #fff;
+  display: flex;
+  align-items: center;  /* Vertically center content */
+  justify-content: space-between; /* Space between left and right sections */
+  padding: 0 15px; /* Horizontal padding */
+  box-sizing: border-box;
+}
+
+/* Navbar link styles */
+.navbar .nav-link {
+  color: #333;
+  padding: 5px 10px;  /* Reduced padding for smaller height */
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.navbar .nav-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Disabled button styles */
+a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+  text-decoration: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Previous CSS styling from show.ejs for search input placeholder */
+/* Please replace this block with the original CSS content from show.ejs */
+</create_file>
